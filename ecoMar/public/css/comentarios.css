@@ -1,0 +1,287 @@
+.embrulho-noticia {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+        }
+
+
+        .ecomar-noticia-principal {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .cabecalho-impacto {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            /* maior hero */
+            display: flex;
+            align-items: flex-end;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cabecalho-impacto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gradiente-visual {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+        }
+
+        .informacao-sobreposta {
+            position: absolute;
+            bottom: 20px;
+            left: 25px;
+            color: white;
+            z-index: 2;
+        }
+
+        .tag-categoria {
+            font-size: 14px;
+            font-weight: 600;
+            background-color: #004488;
+            padding: 3px 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .titulo-noticia {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .informacao-sobreposta .detalhes-noticia {
+            font-size: 14px;
+            opacity: 0.9;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .informacao-sobreposta .detalhes-noticia img.icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        /* COMMENTS PANEL */
+        .comments-panel {
+            background: #fff;
+            border: 1px solid #e1e8ed;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .comments-panel h3 {
+            margin-bottom: 25px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #002b5c;
+        }
+
+        .comment {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .comment-avatar {
+            width: 45px;
+            height: 45px;
+            background: #004488;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .comment-content {
+            flex-grow: 1;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .comment-author {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .comment-date {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .comment-message {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* =========================
+   FORMULÁRIO DE COMENTÁRIOS
+========================= */
+
+.comment-form-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    margin-top: 30px;
+    border: 1px solid #e1e8ed;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comment-form-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+}
+
+.comment-form-header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.comment-form-header h2 {
+    font-size: 20px;
+    color: #002b5c;
+    margin: 0;
+}
+
+.comment-form-header p {
+    font-size: 13px;
+    color: #777;
+    margin: 2px 0 0;
+}
+
+.comment-avatar.big {
+    width: 55px;
+    height: 55px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #004488, #016dda);
+}
+
+.comment-form textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    resize: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.comment-form textarea:focus {
+    outline: none;
+    border-color: #016dda;
+    box-shadow: 0 0 0 3px rgba(1,109,218,0.15);
+}
+
+.comment-form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.comment-info {
+    font-size: 12px;
+    color: #888;
+}
+
+.btn-comment {
+    background: linear-gradient(90deg, #004488, #016dda);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-comment:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(1,109,218,0.35);
+}
+
+/* =========================
+   CAIXA DE LOGIN (COMENTÁRIOS)
+========================= */
+
+.login-comment-box {
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 0%, rgba(1, 109, 218, 1) 100%);
+    padding: 25px 30px;
+    border-radius: 16px;
+    color: white;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.login-comment-content h3 {
+    font-size: 20px;
+    margin: 0 0 5px;
+    color: white;
+}
+
+.login-comment-content p {
+    font-size: 14px;
+    color: #e6e6e6;
+    margin: 0;
+}
+
+/* botão já existente dos voluntários (melhorado) */
+.guest-button {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 12px 26px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.guest-button:hover {
+    background: white;
+    color: #016dda;
+}
+
+.noticia-description{
+    color:rgb(56, 54, 54);
+    margin-bottom:15 px;
+
+}

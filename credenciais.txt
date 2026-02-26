@@ -1,0 +1,3 @@
+admin@mail.com - password
+funcionario@mail.com - password
+voluntario@mail.com - password

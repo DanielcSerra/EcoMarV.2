@@ -1,0 +1,140 @@
+main {
+    min-height: auto;
+}
+#hero h1,#hero p,#hero h2{
+    color:white;
+    position:relative;
+    z-index: 2;
+}
+
+#hero{
+    display:flex;
+    background-image: url(../img/termosbackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100vw;
+    height:525px;
+    flex-direction: column;
+    justify-content: end;
+    padding-left:5%;
+}
+
+#hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 525px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.flexH{
+    display:flex;
+}
+.flexH img{
+    width:60px;
+    margin-left: 10px;
+    margin-bottom: -30px;
+    align-self: center;
+    z-index: 2;
+}
+.flexH h1{
+    font-size: 72pt;
+    align-self: end;
+    margin:0;
+    margin-bottom:-20px;
+}
+
+#faqtexto{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left:5%;
+}
+
+.spacer{
+    height:80px;
+}
+.spacer video{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.faq {
+    margin-bottom: 15px;
+}
+
+.faqtitulo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faqtitulo h3 {
+    margin: 0;
+    color:#016DDA;
+        font-size: 24pt;
+}
+
+.seta {
+    transition: transform 0.3s ease, color 0.2s ease;
+    user-select: none;
+  font-size: 20pt;
+    color: #016DDA;
+}
+
+.seta:hover {
+    color: #004a99;
+    cursor: pointer;
+}
+
+.faqtitulo.active .seta {
+    transform: rotate(-90deg);
+}
+
+.faq p {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    margin-top: 5px;
+    color:black;
+}
+
+.faq p.show {
+    max-height: 500px;
+    opacity: 1;
+    font-size: 16pt;
+}
+
+@media screen and (max-width: 875px) {
+    .faq p.show {
+        font-size: 12pt;
+    }
+
+    .flexH h1 {
+        font-size: 24pt;
+        margin: 0;
+    }
+
+    .faqtitulo h3 {
+        font-size: 20pt;
+    }
+
+    h2 {
+        font-size: 20pt;
+    }
+
+    .faqtitulo {
+        gap: 10px;
+    }
+
+    #faqtexto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,48 @@
+.toast-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4caf50;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    z-index: 9999;
+    animation: fadeIn 0.4s forwards;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toast-message.error {
+    background: #e53935;
+}
+
+.toast-message .close-btn {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}

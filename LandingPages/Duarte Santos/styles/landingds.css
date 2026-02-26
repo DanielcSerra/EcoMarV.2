@@ -1,0 +1,366 @@
+html,body {
+    scroll-behavior: smooth; 
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+    overflow-y: scroll; 
+    font-family:"sans-serif";
+    scroll-snap-type:y mandatory;
+    overscroll-behavior: none;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+#inicio, #faq, #formulario {
+    width: 100vw;
+    height: 100vh;
+}
+
+#faq{
+    background-color: white;
+    color:#016dda;
+}
+
+#faq, #formulario {
+    position: relative;
+}
+
+#logo {
+    margin-bottom: 50px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 36pt;
+    margin-bottom: 1%;
+    font-family: "sans-serif";
+}
+
+p {
+    font-size: 16pt;
+    margin-top: 15%;
+    font-family: "sans-serif";
+    color:black;
+}
+
+h2 {
+    font-size: 42pt;
+    font-weight: 700;
+    font-family: "sans-serif";
+    color:#016dda;
+}
+
+#faq h2 {
+    margin-bottom: 50px;
+}
+
+#botao {
+    margin-top: 10px;
+    margin-bottom: -100px;
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 0%, rgba(1, 109, 218, 1) 100%);
+    border: none;
+    border-radius: 10px;
+    width: 250px;
+    height: 80px;
+    font-size: 24pt;
+    font-family: "sans-serif";
+    text-decoration: none;
+    color: inherit;
+    line-height: 60pt;
+    font-weight: bold;
+}
+
+#botao:hover {
+    cursor: pointer;
+}
+
+#inicio {
+    background-image: url(../media/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    color:white;
+}
+
+#faq {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: white;
+    padding: 3%;
+    box-sizing: border-box; 
+    overflow: hidden;
+}
+
+#faq img {
+    width: 50%;
+    height: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#formulario h2 {
+    color: white;
+    margin-top: -100px;
+    margin-bottom: 100px;
+}
+
+#formulario {
+    background-image: url(../media/backgroundform.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#formulario img {
+    position: absolute;
+    margin: 0;
+}
+
+.esquerda, .direita {
+    position: relative;
+    z-index: 1;
+}
+
+.direita, .meio, .esquerda {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 40%;
+}
+
+.meio h2, .direita h2 {
+    opacity: 0;
+}
+
+.esquerda, .meio, .direita {
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.esquerda {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.meio {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.direita {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+.esquerda.visivel {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.meio.visivel {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.direita.visivel {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.esquerda.oculto {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.meio.oculto {
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.direita.oculto {
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+#formulario form {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+#formulario form.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#formulario form.oculto {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"] {
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    background: white;
+    margin-bottom: 20px;
+}
+
+form input[type="email"] {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: #016dda;
+    border-radius: 15px;
+    border: 2px solid white;
+    padding: 30px;
+}
+
+#pnome, #telefone {
+    width: 45%;
+    margin-right: 20px;
+}
+
+form input[type="number"]::-webkit-outer-spin-button,
+form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+form input[type="number"] {
+    -moz-appearance: textfield; 
+    -webkit-appearance: none; 
+    appearance: none; 
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"] {
+    background: rgba(255, 255, 255, 0);
+    border-bottom: 2px solid white;
+    border-radius: 0px;
+}
+
+form input::placeholder {
+    color: white; 
+    font-weight: bold;
+    font-family: "sans-serif";
+    font-size: 12pt;
+}
+
+form input[type="submit"] {
+    background-color: #ffe54d;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    font-size: 24pt;
+    font-family: "sans-serif"f;
+    transition: transform 0.5s ease-in;
+    text-decoration: none;
+    color: inherit;
+    align-self: center;
+    color:white;
+}
+
+#inicio img{
+ width:500px;
+ margin-top:10%;
+}
+
+@media (max-width: 1050px) {
+#inicio, #faq, #formulario {
+    width: 100vw;
+    height: auto;
+    min-height: 100dvh;
+        scroll-snap-type: none;
+    }
+
+    section {
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+    }
+
+    #inicio img{
+        margin-top: 60px;
+        margin-bottom:60px;
+    }
+    h2{
+        font-size: 32pt;
+    }
+    h3{
+        font-size: 24pt;
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+    #botao{
+        margin-bottom: 30px;
+    }
+    #inicio{
+        margin-bottom: 0;
+    }
+    #faq{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width:100vw;
+        height:auto;
+    }
+    .esquerda h2{
+        margin-bottom:10px;
+    }
+    #faq h2{
+        margin-bottom:0;
+    }
+    #faq img{
+        width:50%;
+    }
+
+    p{
+        font-size:20pt;
+    }
+    #formulario h2{
+        margin-left:10%;
+        margin-top: 0;
+        margin-bottom: 50px;
+        opacity:1;
+    }
+    #formulario{
+        height:900px;
+    }
+    form{
+        opacity: 1 !important;
+    }
+}
+
+@media (max-width: 650px) {
+    #inicio, #faq, #formulario {
+        height: auto;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}

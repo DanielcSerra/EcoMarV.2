@@ -1,0 +1,438 @@
+.hero {
+    position: relative;
+    height: 525px;
+    background: #000 url("") center / cover no-repeat;
+}
+
+.hero__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.3);
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.35) 0%,
+            rgba(0, 0, 0, 0.7) 100%);
+}
+
+.hero__content {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(2rem, 6vw, 6rem) clamp(1.5rem, 7vw, 6rem) 1.5rem;
+    color: #fff;
+    max-width: 900px;
+}
+
+.hero__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    opacity: 0.9;
+}
+
+.hero__title {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    line-height: 0.95;
+}
+
+/* ===============================
+   SECÇÃO GERAL
+=============================== */
+.secao-noticias {
+    padding: 3rem 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.titulo-principal {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #003366;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+/* ===============================
+   SEARCH BAR
+=============================== */
+.barra-pesquisa {
+    width: 100%;
+    background: linear-gradient(135deg, #eaf6ff, #d4ecff);
+    border-radius: 12px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #bcdcff;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 8px 20px rgba(0, 85, 136, 0.1);
+    transition: all 0.2s ease;
+}
+
+.barra-pesquisa:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(0, 85, 136, 0.15);
+}
+
+.barra-pesquisa input {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #004477;
+    padding-left: 10px;
+}
+
+.barra-pesquisa input::placeholder {
+    color: #004477;
+    opacity: 0.7;
+}
+
+/* ===============================
+   LAYOUT PRINCIPAL
+=============================== */
+.layout-noticias {
+    display: flex;
+    gap: 2rem;
+}
+
+/* ===============================
+   FILTROS PADRONIZADOS
+=============================== */
+.filtros {
+    width: 23%;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px 20px;
+    border: 1px solid #e1e8ed;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    height: fit-content;
+}
+
+/* Limpar filtros */
+.limpar-filtros {
+    color: #0077cc;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.limpar-filtros:hover {
+    color: #004488;
+}
+
+/* ===============================
+   Filtros Individuais
+=============================== */
+
+.titulo-filtro {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000; /* texto preto */
+    margin-bottom: 17px;
+    border-bottom: 2px solid #004488;
+    padding-bottom: 6px;
+}
+
+.filtro-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* espaçamento entre radios */
+}
+
+.filtro-item h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000; /* texto preto */
+    margin-bottom: 8px;
+}
+
+/* Radio button custom alinhado */
+.radio-custom {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* espaço entre círculo e texto */
+    cursor: pointer;
+    position: relative;
+    font-size: 0.95rem;
+    color: #000; /* texto preto */
+    user-select: none;
+}
+
+/* Esconder input padrão */
+.radio-custom input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Bolinha custom */
+.radio-custom .checkmark {
+    width: 20px;
+    height: 20px; /* todos iguais */
+    border-radius: 50%; /* arredondado */
+    border: 2px solid #cce0ff;
+    background: #fff;
+    display: inline-block;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Quando selecionado */
+.radio-custom input:checked ~ .checkmark {
+    border-color: #004488;
+    background-color: #004488;
+}
+
+.radio-custom input:checked ~ .checkmark::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Hover efeito */
+.radio-custom:hover .checkmark {
+    border-color: #0066cc;
+}
+
+/* ===============================
+   LISTA DE NOTÍCIAS (GRID MODERNO)
+=============================== */
+.lista-noticias {
+    width: 77%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+
+
+/* ===============================
+   CARD NOTÍCIA MELHORADO
+=============================== */
+.card-noticia {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.card-noticia:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    position: relative;
+}
+
+.card-noticia:hover .card-img {
+    transform: scale(1.08);
+}
+
+.card-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.25) 100%);
+}
+
+.card-conteudo {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.card-titulo {
+    color: #003366;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.35;
+    transition: color 0.3s ease;
+}
+
+.card-noticia:hover .card-titulo {
+    color: #0077cc;
+}
+
+.card-meta {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.card-badges {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.badge-blue {
+    background: linear-gradient(135deg, #00aaff, #00ddcc);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 170, 255, 0.3);
+}
+
+.badge-gray {
+    background: rgba(0,0,0,0.55);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    backdrop-filter: blur(3px);
+}
+
+/* ===============================
+   BOTÃO COMENTÁRIOS
+=============================== */
+.btn-comentarios {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0 20px 18px;
+    padding: 11px 22px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #004488, #00aaff);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(0, 170, 255, 0.35);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-comentarios::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #00ddcc, #00aaff);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.btn-comentarios:hover::before {
+    opacity: 1;
+}
+
+.btn-comentarios:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(0, 170, 255, 0.45);
+}
+
+.btn-comentarios {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===============================
+   PAGINAÇÃO
+=============================== */
+.paginacao {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.pagina {
+    margin: 0 12px;
+    font-weight: 600;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.pagina.ativa {
+    color: #004488;
+    border-bottom: 2px solid #004488;
+    padding-bottom: 2px;
+}
+
+/* ===============================
+   RESPONSIVO
+=============================== */
+@media (max-width: 1024px) {
+    .filtros {
+        width: 30%;
+    }
+
+    .lista-noticias {
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    .layout-noticias {
+        flex-direction: column;
+    }
+
+    .filtros,
+    .lista-noticias {
+        width: 100%;
+    }
+
+    .hero__title {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .barra-pesquisa {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero__content {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .badge-blue,
+    .badge-gray {
+        font-size: 0.55rem;
+        padding: 4px 8px;
+    }
+}

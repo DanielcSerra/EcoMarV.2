@@ -1,0 +1,520 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Inter', Arial, sans-serif;
+    /* background: #ffffff;  Keep existing background or match index? User asked to copy functionality/visuals so index background fits better for the section, but global bg might break other things. Let's keep global structure but ensure section works. */
+    background: linear-gradient(180deg, #002d9c 14%, #001036 80%);
+}
+
+main {
+    min-height: 100vh;
+}
+
+/* ===== CONTEÚDO ===== */
+.content {
+    margin-top: 120px;
+    padding: 60px;
+    text-align: center;
+    flex: 1 0 auto;
+}
+
+:root {
+    color-scheme: light;
+    font-family: "Microsoft Sans Serif", sans-serif;
+    background-color: white;
+    color: black;
+}
+
+
+.hero {
+    position: relative;
+    height: 525px;
+    background: #000 url("") center / cover no-repeat;
+}
+
+.hero__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.3);
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0.65) 100%
+    );
+}
+
+.hero__content {
+    position: absolute;
+    bottom: -0.7rem;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(2rem, 6vw, 6rem) clamp(1.5rem, 7vw, 6rem) 0;
+    color: #fff;
+    max-width: 800px;
+}
+
+.hero__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin: 0 0 1rem;
+}
+
+.hero__title {
+    font-size: clamp(3.8rem, 8vw, 6rem);
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 0.95;
+    white-space: nowrap;
+}
+
+.ajudar {
+    background: #fff;
+    justify-content: space-between;
+    padding: 88px; /* Fixed 88px margin on all sides */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Align content to top */
+    gap: 2.5rem;
+    box-shadow: 0 -20px 60px rgba(15, 15, 25, 0.12);
+    min-height: 90vh; /* Changed from fixed height */
+}
+
+.ajudar_text {
+    flex: 1 1 300px;
+    max-width: 740px;
+}
+
+.ajudar_image-wrapper {
+    flex: 0 1 500px;
+    margin: 0;
+}
+
+.ajudar__cta {
+    width: 100%; /* Forces element to new line */
+    text-align: center;
+    font-family: "Microsoft Sans Serif", sans-serif;
+    font-size: clamp(
+        5rem,
+        6.5vw,
+        5.5rem
+    ); /* Min 80px, scales smaller than hero title */
+    font-weight: 700;
+    color: #016dda;
+    margin-top: 4rem; /* Space above */
+    letter-spacing: 0.03em;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .ajudar {
+        padding: 40px 20px; /* Reduced padding on smaller screens */
+    }
+
+    .ajudar__cta {
+        font-size: clamp(3rem, 8vw, 4rem); /* Smaller font on mobile */
+        margin-top: 2rem;
+        margin-bottom: 40px;
+    }
+}
+.ajudar_text h2 {
+    margin: 0 0 1rem;
+    color: black;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.ajudar_text p {
+    margin: 0 0 1rem;
+    line-height: 1.6;
+    color: #1f1f2b;
+}
+
+.ajudar_image-wrapper img {
+    width: 100%;
+    display: block;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(15, 15, 25, 0.25);
+    object-fit: cover;
+}
+
+
+/* 
+ * COMO AJUDAR SECTION - Ported from Index
+ */
+#como-ajudar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse; /* Swapped columns: Image Left, Text Right */
+    background-color: #001f3f;
+    font-family: 'Inter', sans-serif;
+}
+
+/* LEFT COLUMN (Text Content - Now on Right) */
+#como-ajudar .left-column {
+    position: relative;
+    width: 45vw; /* Increased from 40vw */
+    background-color: #ffffff;
+    border-top-left-radius: 60px; /* Swapped radius to Left */
+    border-bottom-left-radius: 60px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    z-index: 10;
+    height: 440vh; /* Increased height to accommodate 4 items (approx 110vh each) */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* DOTS NAVIGATION */
+#como-ajudar .sticky-dots-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    align-self: flex-start; /* Moved to Left side (seam side) */
+    display: flex;
+    align-items: center;
+    padding-left: 2rem; /* Swapped padding */
+    padding-right: 0;
+    margin-right: auto; /* Swapped margin auto */
+    margin-left: 0;
+    width: 0; 
+    z-index: 20;
+    pointer-events: none;
+    order: 2; 
+}
+
+#como-ajudar .dots-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    pointer-events: auto;
+    transform: translateX(1rem); /* Swapped offset */
+}
+
+#como-ajudar .dot-btn {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background-color: #d1d5db; 
+    border: none;
+    margin: 0.5rem 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#como-ajudar .dot-btn:hover {
+    background-color: #9ca3af;
+    transform: scale(1.2);
+}
+
+#como-ajudar .dot-btn[aria-current='true'] {
+    background-color: #000;
+    transform: scale(1.4);
+}
+
+#como-ajudar .dot-btn:focus-visible {
+    outline: 2px solid #0056b3;
+    outline-offset: 3px;
+}
+
+/* TEXT PANELS */
+#como-ajudar .panels-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 32vh 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    z-index: 10;
+}
+
+#como-ajudar .text-panel {
+    height: 50vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 4rem 0 5rem; /* Swapped padding: 4rem Right, 5rem Left (for dots) */
+    opacity: 1;
+    filter: none;
+    transition: opacity 0.6s ease;
+}
+
+#como-ajudar .text-panel.active {
+    opacity: 1;
+}
+
+#como-ajudar .panel-title {
+    font-size: clamp(2.5rem, 4vw, 4rem); /* Slightly smaller to fit 2 lines */
+    font-weight: 800;
+    color: #007bff;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    white-space: pre-line;
+}
+
+#como-ajudar .panel-text {
+    font-size: 1.125rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 500px;
+}
+
+#como-ajudar .btn-ver-mais {
+    align-self: flex-start;
+    padding: 0.75rem 2.5rem;
+    background-color: #4a5e78;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 1.125rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: none;
+    display: inline-block;
+}
+
+#como-ajudar .btn-ver-mais:hover {
+    background-color: #3a4b60;
+}
+
+/* RIGHT COLUMN */
+#como-ajudar .right-column {
+    width: 55vw; 
+}
+
+#como-ajudar .sticky-image-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#como-ajudar .sticky-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, rgba(0,86,179,0.2) 0%, rgba(0,31,63,0.8) 100%);
+    z-index: 1;
+}
+
+#como-ajudar .bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: scale(0.95);
+    z-index: 2;
+}
+
+#como-ajudar .bg-image.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.mobile-panel-image {
+    display: none;
+    width: 100%;
+    margin: 1.5rem 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    #como-ajudar {
+        flex-direction: column;
+    }
+
+    /* Reveal mobile images - wider but shorter height */
+    .mobile-panel-image {
+        display: block;
+        width: 100%; 
+        height: 220px; /* Limit height */
+        object-fit: cover; /* Crop to fit */
+        border-radius: 12px;
+        margin: 2rem 0;
+    }
+
+    #como-ajudar .left-column {
+        width: 100vw;
+        height: auto; 
+        min-height: auto;
+        border-radius: 0 0 40px 40px; 
+        background-color: rgba(255,255,255,0.95);
+        z-index: 2; 
+        margin-top: 0;
+        padding-top: 0; 
+        padding-bottom: 2rem;
+        box-shadow: none;
+        display: block; 
+        position: relative;
+    }
+
+    #como-ajudar .panels-wrapper {
+        position: relative;
+        height: auto;
+        gap: 2rem; 
+        padding: 3rem 0; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Fix Dots: REMOVE completely on mobile */
+    #como-ajudar .sticky-dots-wrapper {
+        display: none !important;
+    }
+    
+    #como-ajudar .dots-container {
+        display: none !important;
+    }
+
+    #como-ajudar .text-panel {
+        padding: 0 2rem; 
+        /* Left aligned content */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align start */
+        text-align: left; /* Text left */
+        height: auto; 
+        min-height: auto;
+        margin-bottom: 2rem;
+    }
+    
+    #como-ajudar .btn-ver-mais {
+        align-self: center; /* KEEP BUTTON CENTERED */
+        margin-top: 1rem;
+    }
+
+    #como-ajudar .panel-title {
+        font-size: 2.2rem;
+        text-align: left; /* Title Left */
+    }
+    
+    #como-ajudar .panel-text {
+        text-align: left; /* Text Left */
+    }
+
+    /* Hide background fixed images on mobile */
+    #como-ajudar .right-column {
+        display: none !important;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    #como-ajudar .bg-image, 
+    #como-ajudar .text-panel, 
+    #como-ajudar .dot-btn { 
+        transition: none !important; 
+    }
+    #como-ajudar .bg-image { opacity: 0; }
+    #como-ajudar .bg-image.active { opacity: 1; }
+}
+
+/* Old styles removal/override if necessary - assuming replaced content mostly covers it */
+.doar-wrapper { display: none; }
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .doar-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .doar__image {
+        position: relative;
+        width: 100%;
+        height: 40vh;
+        order: -1;
+    }
+
+    .doar__image--fixed {
+        position: relative !important;
+        width: 100% !important;
+        height: 40vh !important;
+    }
+
+    .doar {
+        height: auto;
+    }
+
+    .doar__content {
+        position: relative;
+        top: 0;
+        transform: none;
+        width: 100%;
+        height: auto;
+        padding-left: 0;
+        flex-direction: column;
+    }
+
+    .doar__spacer {
+        display: none;
+    }
+
+    .doar__main {
+        width: 100%;
+        padding: 3rem 1.5rem;
+    }
+
+    .doar__texts {
+        width: 100%;
+        align-items: center;
+        padding-right: 0;
+    }
+
+    .doar__texts h2,
+    .doar__texts p {
+        text-align: center;
+    }
+
+    .doar__dots {
+        width: 100%;
+        flex-direction: row;
+        margin-top: 2rem;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__content {
+        bottom: 10rem;
+    }
+
+    .hero__title {
+        order: -1;
+    }
+}

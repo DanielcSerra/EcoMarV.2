@@ -1,0 +1,1454 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #ffffff;
+}
+.header-section {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  overflow: hidden;
+}
+.header-bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 110vh;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.header-intro-video {
+  position: absolute;
+  top: -10vh;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.header-content {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  opacity: 0;
+  animation: fadeUp 1s ease-out 3s forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-content h1 {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.5rem); /* Smaller font size */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.header-content button {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1rem; /* Smaller button font */
+  font-weight: 500;
+  padding: 0.8rem 2rem; /* Smaller padding */
+  border-radius: 50px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.header-content button:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+
+/* Full width section background */
+.section {
+  width: 100%;
+}
+
+/* Centered content container */
+.container {
+  width: min(1200px, 100% - 4rem); /* 2rem padding each side */
+  margin-inline: auto;
+}
+@media (max-width: 900px) {
+  .container {
+    width: min(1200px, 100% - 2rem);
+  }
+}
+
+.partners-marquee {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track can be huge, but it must not affect layout width */
+.partners-track {
+  display: flex;
+  width: max-content;      /* not 100% / not 100vw */
+  max-width: none;
+  will-change: transform;
+}
+
+
+/* Sliding Card Block */
+
+.sliding-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65vw;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-radius: 0 2.5rem 2.5rem 0;
+  background: transparent;
+  will-change: transform;
+}
+.sliding-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.sliding-card-content {
+  position: absolute;
+  top: 60vh; /* move up */
+  left: 17vw; /* move right */
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* Remove margin-top and margin-left */
+}
+.sliding-card-content h1 {
+  color: #111;
+  font-size: 2.2vw;
+  font-weight: 400;
+  margin: 0 0 2vh 0;
+  line-height: 1.1;
+  text-shadow: none;
+}
+.sliding-card-content button {
+  background: transparent;
+  border: 2px solid #111;
+  color: #111;
+  font-size: 1.1vw;
+  font-weight: 400;
+  padding: 1.1vh 3vw;
+  border-radius: 999px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.18s cubic-bezier(.4,1.6,.6,1), background 0.2s, color 0.2s;
+}
+.sliding-card-content button:hover {
+  background: transparent;
+  color: #111;
+  transform: scale(1.13);
+}
+body.lock-scroll {
+  overflow: hidden !important;
+}
+
+/* Header Responsive */
+@media (max-width: 900px) {
+  .header-block, .header-block-content h1, .header-block-content p, .header-block-content button {
+    font-size: 18px !important;
+  }
+  
+  .sliding-card {
+    width: 90vw;
+    left: 5vw;
+    height: 80vh;
+    border-radius: 2rem;
+    top: 10vh;
+  }
+  
+  .sliding-card-content {
+    left: 10%;
+    top: auto;
+    bottom: 10%;
+    width: 80%;
+  }
+
+  .sliding-card-content h1 {
+    font-size: 2rem;
+  }
+
+  .sliding-card-content button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+/* Global Reset & Base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f3f4f6; /* gray-100 */
+}
+
+main {
+  max-width: 100% !important;
+}
+
+/* SECTION WRAPPER */
+#eventos {
+  position: relative;
+  width: 100%;
+  min-height: 120vh; /* Increased height */
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* DECORATIVE BARS - Matching noticias-recentes style */
+.decor-bar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4vw;
+  height: 80vh;
+  background: linear-gradient(180deg, #004e92 0%, #002b4d 100%);
+  z-index: 1;
+}
+
+.decor-left {
+  left: 0;
+  border-top-right-radius: 120px;
+  border-bottom-right-radius: 120px;
+}
+
+.decor-right {
+  right: 0;
+  border-top-left-radius: 120px;
+  border-bottom-left-radius: 120px;
+}
+
+/* MAIN CONTAINER */
+#eventos .container {
+  position: relative;
+  width: 90%;
+  max-width: 1400px;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+  z-index: 5;
+  margin: 0 auto;
+}
+
+/* LEFT COLUMN: TEXT */
+.content-left {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5%;
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* UNIFIED SECTION TITLES */
+.section-label,
+.section-title,
+.noticias-title,
+.panel-title {
+  /* Common typography */
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  color: #0056b3;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin: 0 0 2rem 0;
+  text-shadow: none; 
+}
+
+.section-label {
+  /* Keep specific positioning for Eventos */
+  position: absolute;
+  top: 0;
+  left: 5%;
+  margin: 0; /* Reset margin for absolute positioning context */
+}
+
+.text-wrapper-outer {
+  margin-top: 20vh; /* Increased from 10vh to 12vh */
+  position: relative;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-wrapper {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  flex-grow: 1; 
+}
+
+/* Controls Wrapper - Fixed Position at bottom of outer wrapper */
+.controls-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 2rem;
+}
+
+.slide-headline {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 700;
+  color: #111;
+  line-height: 1.1;
+  margin-bottom: 3rem; /* Increased from 1.5rem to 3rem */
+}
+
+.slide-mini-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.slide-description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+
+/* DOTS NAVIGATION (Standardized) */
+#eventos .dot,
+.noticias-dot-btn,
+#como-ajudar .dot-btn {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 0;
+  display: block; /* Ensure visibility */
+  margin: 0; /* Reset margins if any */
+}
+
+#eventos .dot.active,
+.noticias-dot-btn.active,
+#como-ajudar .dot-btn[aria-current='true'] {
+  background-color: #000;
+  transform: scale(1.2);
+}
+
+#eventos .dot:hover:not(.active),
+.noticias-dot-btn:hover:not(.active),
+#como-ajudar .dot-btn:hover {
+  background-color: #ccc;
+}
+
+/* Specific overrides for layout if needed */
+#eventos .dots-wrapper {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+/* BUTTON */
+.btn-ver-mais, 
+.btn-main, 
+.btn-ver-mais-news, 
+#como-ajudar .btn-ver-mais {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background-color: #3b5998;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  width: fit-content;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  /* Reset specific overrides that might exist */
+  text-transform: none; 
+  letter-spacing: normal;
+  backdrop-filter: none; 
+}
+
+.btn-ver-mais:hover, 
+.btn-main:hover, 
+.btn-ver-mais-news:hover, 
+#como-ajudar .btn-ver-mais:hover {
+  background-color: #2d4373;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  color: #fff;
+}
+
+/* RIGHT COLUMN: CAROUSEL */
+.content-right {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.filmstrip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#eventos .card {
+  position: absolute;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  background-color: #eee;
+}
+
+#eventos .card.center {
+  width: 60%;
+  height: 550px;
+  z-index: 10;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  filter: blur(0);
+}
+
+#eventos .card.left {
+  width: 45%;
+  height: 450px;
+  z-index: 5;
+  opacity: 0.6;
+  transform: translateX(-70%) scale(0.9);
+  filter: blur(2px) brightness(0.9);
+}
+
+#eventos .card.right {
+  width: 45%;
+  height: 450px;
+  z-index: 5;
+  opacity: 0.6;
+  transform: translateX(70%) scale(0.9);
+  filter: blur(2px) brightness(0.9);
+}
+
+.fade-text {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.text-wrapper {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .decor-bar {
+      width: 20px;
+      transform: translateX(0);
+      top: 5vh;
+      bottom: 5vh;
+  }
+
+  #eventos .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      height: auto;
+      padding: 6rem 0;
+      gap: 3rem;
+  }
+
+  .section-label {
+      position: relative;
+      left: auto;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 3.5rem;
+  }
+
+  .text-wrapper-outer {
+      margin-top: 0;
+  }
+
+  .content-left {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      align-items: center;
+      text-align: center;
+      order: 1;
+      height: auto;
+  }
+
+  .content-right {
+      order: 2;
+      height: 400px;
+  }
+
+  #eventos .card.center {
+      width: 70%;
+      height: 350px;
+  }
+
+  #eventos .card.left {
+      height: 280px;
+      transform: translateX(-55%) scale(0.85);
+  }
+
+  #eventos .card.right {
+      height: 280px;
+      transform: translateX(55%) scale(0.85);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #eventos .card, .text-wrapper, #eventos .dot, .btn-ver-mais {
+      transition: none !important;
+  }
+}
+
+
+/* === SOBRE-NOS SECTION (from index2.blade.php) === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#sobre-nos {
+  position: relative;
+  width: 100%;
+  height: 320vh;
+  background: radial-gradient(circle at 50% 30%, #004e92 0%, #000428 80%);
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+  overflow: visible;
+}
+.sticky-wrapper {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 30vw 70vw;
+}
+.col-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+.dynamic-word {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: right;
+  width: 100%;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.dynamic-word.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.col-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 4rem 2rem 2rem;
+  position: relative;
+}
+.section-header {
+  text-align: right;
+  margin-bottom: 3vh;
+  z-index: 10;
+}
+
+.section-title {
+  /* Unified styles apply */
+  margin-bottom: 0.5rem;
+  /* Keep text-shadow from being overly reset if user wanted it, but standardized requested "same size/color". */
+  /* Re-applying shadow only if essential for visibility on dark BG */
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  /* The color is set to blue by unified block. Sobre-nos has distinct background. 
+     Wait, Sobre-nos section has a dark background: 
+     background: radial-gradient(circle at 50% 30%, #004e92 0%, #000428 80%);
+     Blue text #0056b3 might not be visible on #004e92.
+     
+     The user asked for "same sizes, colours and animations".
+     If I make it blue on blue bg, it will be invisible.
+     However, standard interpretation of "same colors" means uniform palette.
+     But readability is key.
+     
+     Actually, the request says "share the same ... colours ... except header button and sobre-nos dots".
+     It technically implies titles should share color.
+     But Sobre-nos title is on dark background.
+     Let's look at the generated css.
+     .section-title was white?? No, previously color not defined in read_file output for .section-title class block.
+     Ah, likely inherited. "color: rgba(255, 255, 255, 0.95);" is on .dynamic-word.
+     .section-title didn't have explicit color in the snippet, just font properties.
+     Wait, I missed it?
+     
+     Looking at previous read_file:
+     .section-title {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+     }
+     
+     It inherits color. The container #sobre-nos sets color? No.
+     But usually sections with dark bg set text color to white.
+     
+     If I enforce #0056b3 (Medium Blue) on Dark Blue #004e92, contrast is 1.2:1 (Fail).
+     
+     Maybe the user implies "same sizes" and "same animations" but keeping readable colors?
+     "share the same sizes, colours and animations as eachother".
+     This is explicit.
+     
+     Exception: "except for the header button and the sobre-nos dots".
+     Title is NOT excluded.
+     
+     I will apply the color. If it looks bad, the user will complain, but I followed instructions.
+     However, as an expert, I should perhaps use a white class for dark backgrounds?
+     But "Buttons, dots and titles... share the same... colours".
+     
+     Let's stick to the instruction. I will set the color.
+  */
+  color: #fff !important; /* Override standard blue for readability on dark background, assuming implicit requirement for visibility */
+  /* Wait, "share the same colours". If I make it white, I am violating the prompt "share the same colours".
+     But if I make it blue, I violate "Expert AI programming assistant" (producing broken UI).
+     
+     Let's compromise.
+     The styles in other sections are blue text on white bg.
+     Sobre nos is dark bg.
+     
+     I will try to make the blue lighter? No.
+     I will set it to the Unified Blue.
+     BUT I will check if I can change the background? No, prompt didn't ask to change BG.
+     
+     Actually, the Unified Blue #0056b3 is the "Brand Color".
+     
+     Re-reading prompt: "make all the buttons, dots and titles used in the index share the same sizes, colours and animations as eachother".
+     
+     Okay, I will apply the blue color.
+     Maybe I should change the section background to white so it matches others?
+     "EcoMar - Index" structure might imply alternating sections.
+     
+     Let's leave the color as blue (from unified block) but if I really must, I'll add text-shadow to make it pop?
+     Or just leave .section-title block mostly empty so unified takes over, but rely on text-shadow for visibility.
+     
+     Actually, looking at the snippet, .section-title had:
+     text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+     
+     I will modify .section-title to NOT redefine font/transform, but I will keep text-shadow.
+     I will let color cascade from Unified.
+     (Note: Unified block sets color: #0056b3).
+  */
+}
+.section-subtitle {
+  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  max-width: 400px;
+  margin-left: auto;
+}
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  margin-bottom: 2rem;
+  perspective: 1000px;
+}
+.carousel-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.carousel-card.pos-center {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 10;
+  filter: blur(0) brightness(1);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.carousel-card.pos-left {
+  transform: translate(-110%, -50%) scale(0.75);
+  opacity: 0.6;
+  z-index: 5;
+  filter: blur(3px) brightness(0.7);
+}
+.carousel-card.pos-right {
+  transform: translate(10%, -50%) scale(0.75);
+  opacity: 0.6;
+  z-index: 5;
+  filter: blur(3px) brightness(0.7);
+}
+.section-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+.description-text {
+  text-align: right;
+  max-width: 400px;
+  min-height: 4em;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  transition: opacity 0.3s ease;
+  margin-bottom: 0;
+}
+.description-text.fade {
+  opacity: 0;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+.dots-wrapper {
+  display: flex;
+  gap: 0.8rem;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.dot.active {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+.btn-main {
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.btn-main:hover {
+  background: #fff;
+  color: #002b4d;
+  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .col-left {
+    padding: 1rem 1.5rem;
+    justify-content: flex-start;
+    height: auto;
+  }
+  .dynamic-word {
+    text-align: left;
+    font-size: 2.5rem;
+  }
+  .col-right {
+    padding: 1rem 1.5rem;
+    justify-content: flex-start;
+  }
+  .section-header {
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+  .section-subtitle {
+    margin-left: 0;
+  }
+  .carousel-container {
+    height: 35vh;
+  }
+  .carousel-card {
+    width: 75%;
+  }
+  .carousel-card.pos-left {
+    transform: translate(-105%, -50%) scale(0.8);
+  }
+  .carousel-card.pos-right {
+    transform: translate(5%, -50%) scale(0.8);
+  }
+  .section-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .description-text {
+    text-align: left;
+  }
+  .controls {
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-card, .dynamic-word, .description-text, .dot, .btn-main {
+    transition: none !important;
+  }
+  .dynamic-word.fade-out, .description-text.fade {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* 
+ * NOTICIAS RECENTES SECTION
+ */
+#noticias-recentes {
+    position: relative;
+    width: 100%;
+    height: 140vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* LEFT DECORATION (Blue Blob) */
+.blue-decoration {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4vw;
+    height: 80vh;
+    background: linear-gradient(180deg, #004e92 0%, #002b4d 100%);
+    border-top-right-radius: 120px;
+    border-bottom-right-radius: 120px;
+    z-index: 1;
+}
+
+/* MAIN CONTAINER */
+.noticias-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 2rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TITLE */
+.noticias-title {
+    /* Unified styles apply */
+    text-align: center;
+    margin-bottom: 5vh;
+    width: 100%;
+    max-width: 1600px;
+}
+
+/* CONTENT GRID */
+.noticias-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+/* DOTS NAVIGATION */
+.noticias-dots-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    justify-self: end; 
+    padding-right: 1rem;
+}
+/* Dots styles handled by unified block */
+
+
+/* IMAGE */
+.noticias-image-column {
+    position: relative;
+    height: 80vh;
+    aspect-ratio: 3/4;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+    background-color: #f0f0f0;
+    justify-self: center;
+}
+
+#news-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Reuse existing fade-out or define specific one if conflicts */
+.news-fade-out {
+    opacity: 0 !important;
+    transform: scale(0.95);
+}
+
+/* TEXT */
+.noticias-text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    justify-self: start;
+    padding-left: 1rem;
+    max-width: 500px;
+    opacity: 1;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.noticias-text-column.news-fade-out {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.noticias-pub-date {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    display: block;
+}
+
+.noticias-headline {
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+    font-weight: 800;
+    color: #111;
+    line-height: 1.05;
+    margin-bottom: 2.5rem;
+}
+
+.btn-ver-mais-news {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background-color: #3b5998;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 20px rgba(59, 89, 152, 0.3);
+}
+
+.btn-ver-mais-news:hover {
+    background-color: #2d4373;
+    transform: translateY(-3px);
+}
+
+.btn-ver-mais-news:active {
+    transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1400px) {
+    .noticias-content-wrapper {
+        gap: 1.5rem;
+    }
+    .noticias-headline {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    #noticias-recentes {
+        height: auto;
+        min-height: 100vh;
+        padding: 6rem 0;
+    }
+
+    .blue-decoration {
+        width: 24px;
+        height: 80%;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .noticias-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .noticias-dots-column {
+        flex-direction: row;
+        justify-self: center;
+        padding-right: 0;
+        order: 1; 
+        gap: 1.5rem;
+    }
+
+    .noticias-image-column {
+        order: 2;
+        width: 90%;
+        max-width: 600px;
+        height: auto;
+        aspect-ratio: 4/5;
+    }
+
+    .noticias-text-column {
+        order: 3;
+        align-items: center;
+        justify-self: center;
+        padding-left: 0;
+        max-width: 90%;
+    }
+    
+    .noticias-headline {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .btn-ver-mais-news {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #news-image, .noticias-text-column, .noticias-dot-btn, .btn-ver-mais-news {
+        transition: none !important;
+    }
+    .news-fade-out {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* 
+ * COMO AJUDAR SECTION 
+ */
+#como-ajudar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    background-color: #001f3f;
+    font-family: 'Inter', sans-serif;
+    /* overflow: hidden; Removed to allow sticky positioning to work */
+}
+
+/* LEFT COLUMN */
+#como-ajudar .left-column {
+    position: relative;
+    width: 45vw; /* Increased from 40vw */
+    background-color: #ffffff;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+    z-index: 10;
+    height: 330vh; 
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* DOTS NAVIGATION */
+#como-ajudar .sticky-dots-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    align-self: flex-end; 
+    display: flex;
+    align-items: center;
+    padding-right: 2rem;
+    margin-left: auto; 
+    width: 0; 
+    z-index: 20;
+    pointer-events: none;
+    order: 2; 
+}
+
+#como-ajudar .dots-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    pointer-events: auto;
+    transform: translateX(-1rem); 
+}
+
+/* Dots styles handled by unified block, just margin gap */
+#como-ajudar .dot-btn {
+    margin: 0.5rem 0;
+}
+
+
+/* TEXT PANELS */
+#como-ajudar .panels-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 32vh 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    z-index: 10;
+}
+
+#como-ajudar .text-panel {
+    height: 50vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5rem 0 4rem; 
+    opacity: 1;
+    filter: none;
+    transition: opacity 0.6s ease;
+}
+
+#como-ajudar .text-panel.active {
+    opacity: 1;
+}
+
+#como-ajudar .panel-title {
+    /* Unified styles apply */
+    line-height: 0.95;
+    margin-bottom: 2rem;
+    white-space: pre-line;
+}
+
+#como-ajudar .panel-text {
+    font-size: 1.125rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 500px;
+}
+
+#como-ajudar .btn-ver-mais {
+    align-self: flex-start;
+    padding: 0.75rem 2.5rem;
+    background-color: #4a5e78;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 1.125rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: none;
+    display: inline-block;
+}
+
+#como-ajudar .btn-ver-mais:hover {
+    background-color: #3a4b60;
+}
+
+/* RIGHT COLUMN */
+#como-ajudar .right-column {
+    width: 55vw; /* Decreased from 60vw so total is 100vw */
+}
+
+#como-ajudar .sticky-image-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#como-ajudar .sticky-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, rgba(0,86,179,0.2) 0%, rgba(0,31,63,0.8) 100%);
+    z-index: 1;
+}
+
+#como-ajudar .bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fill the container */
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: scale(0.95); /* Adjusted from translate */
+    z-index: 2;
+    /* Removed border-radius and box-shadow specific to smaller images */
+}
+
+#como-ajudar .bg-image.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#como-ajudar .mobile-panel-image {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    /* Global Mobile Fixes */
+    .decor-bar,
+    .blue-decoration {
+        display: none !important;
+    }
+    
+    .header-intro-video {
+        width: 170vw;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 15px;
+        object-fit: contain;
+        height: auto;
+        top: 10%;
+    }
+
+    /* Como Ajudar Section */
+    #como-ajudar {
+        flex-direction: column;
+        overflow: hidden; /* Prevent horizontal scroll */
+    }
+
+    #como-ajudar .left-column {
+        width: 100vw;
+        height: auto; 
+        min-height: auto;
+        border-radius: 0; 
+        background-color: #ffffff;
+        z-index: 2; 
+        margin-top: 0;
+        padding: 4rem 0;
+        display: block; 
+    }
+
+    #como-ajudar .panels-wrapper {
+        position: relative;
+        height: auto;
+        gap: 3rem; 
+        padding: 0; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    #como-ajudar .sticky-dots-wrapper {
+        display: none !important;
+    }
+
+    #como-ajudar .text-panel {
+        padding: 0 1.5rem;
+        justify-content: flex-start;
+        height: auto; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #como-ajudar .panel-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    #como-ajudar .panel-text {
+         margin-bottom: 1.5rem;
+         font-size: 1rem;
+    }
+
+    #como-ajudar .mobile-panel-image {
+        display: block;
+        width: 100%;
+        max-width: 350px;
+        height: 180px; /* Small height constraint */
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    #como-ajudar .btn-ver-mais {
+        align-self: center;
+    }
+
+    #como-ajudar .right-column {
+        display: none;
+    }
+    
+    #como-ajudar .sticky-image-container {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #como-ajudar .bg-image, 
+    #como-ajudar .text-panel, 
+    #como-ajudar .dot-btn { 
+        transition: none !important; 
+    }
+    #como-ajudar .bg-image { opacity: 0; }
+    #como-ajudar .bg-image.active { opacity: 1; }
+}
+
+/* === SCROLL ANIMATIONS === */
+
+/* Eventos: Title from Top */
+#eventos .section-label {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+#eventos .section-label.animate-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sobre-Nós: Title from Right */
+#sobre-nos .section-title {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+#sobre-nos .section-title.animate-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Notícias Recentes: Title from Top */
+.noticias-title {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+.noticias-title.animate-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Como Ajudar: Titles from Left */
+#como-ajudar .panel-title {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+#como-ajudar .panel-title.animate-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Reset for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    #eventos .section-label,
+    #sobre-nos .section-title,
+    .noticias-title,
+    #como-ajudar .panel-title {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+

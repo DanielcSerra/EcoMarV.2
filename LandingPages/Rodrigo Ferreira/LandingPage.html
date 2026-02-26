@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LandingPage - Rodrigo Ferreira</title>
+
+    <!-- CSS externos -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="assets/img/logo.svg" alt="logo" class="logo" />
+
+      <a href="#form-contato">
+        <button type="button">Quero ajudar</button>
+      </a>
+    </div>
+    <div class="hero">
+      <div class="content">
+        <h1>Ajuda a proteger <br />o oceano</h1>
+        <p>Seja voluntário e ajude a manter as praias limpas para todos</p>
+        <a href="#form-contato">
+          <button type="button">Inscrever-se</button>
+        </a>
+      </div>
+    </div>
+    <div class="texto">
+      <div class="texto-direita">
+        <h1>O que é a EcoMar?</h1>
+        <p>
+          A EcoMar é uma associação sem fins lucrativos que atua na proteção dos
+          oceanos, organizando limpezas de praias, ações de sensibilização e
+          projetos educativos junto das escolas
+        </p>
+      </div>
+    </div>
+    <section class="cards-container">
+      <div class="card">
+        <div class="card-image">
+          <img src="assets/img/limparpraia.jpg" alt="Imagem 1" />
+          <div class="card-text">
+            <h2>Limpeza de Praias</h2>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="assets/img/foca.jpg" alt="Imagem 2" />
+          <div class="card-text">
+            <h2>Proteção da Fauna Marinha</h2>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="assets/img/menina.jpg" alt="Imagem 3" />
+          <div class="card-text">
+            <h2>Ações Educativas</h2>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="assets/img/hand-water.jpg" alt="Imagem 4" />
+          <div class="card-text">
+            <h2>Impacto Ambiental</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impacto">
+      <div class="impacto_texto">
+        <h1>O Nosso Impacto</h1>
+        <p>
+          A poluição marinha tem consequências graves para os ecossistemas, para
+          a saúde humana e para as economias das zonas costeiras. A limpeza das
+          praias permite reduzir a presença de microplásticos, proteger as
+          espécies e impedir que os resíduos cheguem ao oceano. Ações locais,
+          mesmo simples, têm um impacto real e duradouro no ambiente e nas
+          comunidades.
+        </p>
+      </div>
+      <div class="impacto-cards">
+        <div class="card1">
+          <img src="assets/img/lixo.png" alt="Ícone lixo" />
+          <h3>+3 Toneladas</h3>
+          <p>
+            De resíduos recolhidos das praias locais, ajudando a proteger o
+            ecossistema marinho.
+          </p>
+        </div>
+
+        <div class="card1">
+          <img src="assets/img/voluntary.png" alt="Ícone voluntários" />
+          <h3>+500 Voluntários</h3>
+          <p>
+            Pessoas incríveis que doaram o seu tempo e energia para cuidar do
+            planeta.
+          </p>
+        </div>
+
+        <div class="card1">
+          <img src="assets/img/praia.png" alt="Ícone praias" />
+          <h3>12 Praias</h3>
+          <p>
+            Foram limpas e transformadas em espaços mais seguros e sustentáveis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="glass-container">
+      <div class="glass-content">
+        <!-- Formulário -->
+        <div class="glass-form" id="form-contato">
+          <h2>Entra em Contacto</h2>
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome *</label>
+                <input
+                  type="text"
+                  id="nome"
+                  placeholder="O teu nome"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail *</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="O teu email"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="localidade">Localidade</label>
+                <input
+                  type="text"
+                  id="localidade"
+                  placeholder="Ex: Lisboa, Portugal"
+                />
+              </div>
+              <div class="form-group">
+                <label for="disponibilidade">Disponibilidade</label>
+                <select id="disponibilidade">
+                  <option value="" disabled selected>
+                    Seleciona a tua disponibilidade
+                  </option>
+                  <option value="finssemana">Fins de semana</option>
+                  <option value="semanal">Durante a semana</option>
+                  <option value="ferias">Durante as férias</option>
+                  <option value="flexivel">Horário flexível</option>
+                </select>
+              </div>
+            </div>
+
+            <label for="area">Área de interesse *</label>
+            <select id="area" required>
+              <option value="" disabled selected>Seleciona uma opção</option>
+              <option value="educacao">Educação Ambiental</option>
+              <option value="limpeza">Limpeza de Praias</option>
+              <option value="fauna">Proteção da Fauna Marinha</option>
+            </select>
+
+            <label for="msg">Mensagem</label>
+            <textarea id="msg"></textarea>
+
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+
+        <!-- Imagem -->
+        <div class="glass-image">
+          <img src="assets/img/clear-glass-vial-body-water.jpg" alt="Imagem" />
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 EcoMar — Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>

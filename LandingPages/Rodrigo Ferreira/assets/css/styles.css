@@ -1,0 +1,605 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ====== FONTES ====== */
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ====== REGRAS GERAIS ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #041720;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ====== TÍTULOS ====== */
+h1 {
+  font-size: clamp(45px, 8vw, 80px);
+  line-height: 1.1;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: clamp(30px, 8vw, 40px);
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+p {
+  font-size: 18px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+/*AREA 1*/
+.hero {
+  height: 90vh;
+  background-image: url(../img/Img_fundo.jpg);
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #041720 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+.logo {
+  width: 210px;
+  cursor: pointer;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  animation: slideFadeIn 1s forwards;
+}
+
+button {
+  color: #fbfcfd;
+  padding: 10px 25px;
+  background-color: #f4c542;
+  border: 3px solid #f4c542;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  font-size: 16px;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: #f4c542;
+}
+
+.content {
+  color: #fbfcfd;
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  transform: translateY(-50%);
+  z-index: 2;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.content h1 {
+  margin-bottom: 15px;
+}
+
+.content p {
+  margin-bottom: 15px;
+}
+
+/*AREA 2*/
+
+.texto {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 85px;
+}
+
+.texto h1 {
+  margin-bottom: 20px;
+}
+.texto p {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #e0f7fa;
+  animation: fadeIn 1.2s ease forwards;
+  margin-bottom: 80px;
+}
+
+/*AREA 3*/
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 60px 130px;
+  position: relative;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s, filter 0.3s;
+  filter: grayscale(100%);
+}
+
+.card-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.card h2 {
+  font-size: 25px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Traço cima e baixo do container */
+.cards-container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 15%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.cards-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  width: 15%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.cards-container::before {
+  top: 0;
+}
+
+.cards-container::after {
+  bottom: 0;
+}
+
+/*AREA 4*/
+
+.impacto {
+  text-align: center;
+  margin: 120px auto;
+  color: #fff;
+  width: 90%;
+}
+
+.impacto h1 {
+  margin-bottom: 2%;
+  font-size: 50px;
+}
+.impacto h3 {
+  font-family: "Inter", sans-serif;
+}
+
+.impacto_texto {
+  margin-bottom: 3%;
+  text-align: center;
+}
+
+.impacto_texto p {
+  color: #ebeaea;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.impacto-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.impacto .card1 {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 50px 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  background-color: #041c29;
+  background-blend-mode: lighten;
+}
+
+.impacto .card1:hover {
+  transform: scale(1.05);
+}
+.impacto .card1 img {
+  width: 70px;
+  margin-bottom: 15px;
+}
+.impacto .card1 h3 {
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.impacto .card1 p {
+  font-size: 16px;
+  color: #e0f7fa;
+  line-height: 1.5;
+}
+
+/*AREA 5 - FORMULÁRIO*/
+
+.glass-container {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 40px;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  background-color: #041c29;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.glass-image,
+.glass-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.glass-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-form h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.glass-form label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+.glass-form input,
+.glass-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  resize: vertical;
+}
+
+.glass-form button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background-color: #f4c542;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.glass-form button:hover {
+  background-color: #f4c542;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.area input,
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.glass-form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+.glass-form select:invalid {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.glass-form select option {
+  color: #000;
+}
+
+.glass-form input,
+.glass-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.glass-form input::placeholder,
+.glass-form textarea::placeholder,
+.glass-form select::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+  font-family: "Inter", sans-serif;
+}
+
+/*AREA 6*/
+
+footer {
+  background: #041720;
+  color: #b1b0b0;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 14px;
+}
+
+footer p {
+  font-size: 15px;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #b1b0b0;
+}
+
+@media screen and (max-width: 768px) {
+  /* NAVBAR */
+
+  .navbar {
+    gap: 10px;
+  }
+
+  .navbar .logo {
+    width: 230px;
+  }
+
+  /* HERO */
+
+  .hero .content {
+    text-align: center;
+    width: 90%;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  .hero .content button {
+    padding: 12px 50px;
+    font-size: 16px;
+  }
+
+  /* TEXTO1 */
+
+  .texto h1 {
+    font-size: 48px;
+  }
+  .texto p {
+    font-size: 16px;
+    max-width: 95%;
+  }
+
+  /* 4 IMAGENS */
+
+  .cards-container {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .card img {
+    height: 300px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+
+  .cards-container::before,
+  .cards-container::after {
+    width: 25%;
+  }
+
+  /* CARDS - IMPACTO */
+
+  .impacto h2 {
+    font-size: 45px;
+  }
+
+  .impacto-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .impacto_texto p {
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+
+  /* FORMULÁRIO  */
+
+  .glass-form h2 {
+    font-size: 30px;
+    margin-top: 15px;
+  }
+  .glass-container {
+    margin: 15px 45px;
+    padding: 40px;
+  }
+
+  .glass-content {
+    gap: 10px;
+  }
+
+  .form-row {
+    gap: 5px;
+  }
+
+  .form-group input,
+  .form-group select {
+    margin-bottom: 5px;
+  }
+}

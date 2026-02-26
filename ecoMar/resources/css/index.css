@@ -1,0 +1,39 @@
+/* Responsive container for main content */
+.main-content-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+/* Ensure header-section is always full width */
+
+.header-section {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  min-width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+  z-index: 10;
+}
+
+@media (max-width: 1200px) {
+  .main-content-container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}

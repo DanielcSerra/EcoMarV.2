@@ -1,0 +1,137 @@
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Header */
+#header {
+  background: rgba(12, 93, 166, 0.95);
+  color: #fff; 
+}
+.logo {
+  color: #fff;
+  font-weight: 800;
+}
+.btn-nav {
+  color: #fff; 
+  border: 1px solid #63c1c5;
+  border-radius: 50px;
+  padding: 0.4rem 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-nav:hover {
+  background: #63c1c5;;
+  color: #003;
+}
+
+/* Hero */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-slide.active {
+  opacity: 1;
+}
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.btn-hero {
+  background: #63c1c5;;
+  color: #003;
+  border: none;
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+}
+.hero-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.hero-btn.prev { 
+    left: 1rem; 
+}
+.hero-btn.next {
+     right: 1rem;
+     }
+
+
+.services {
+  background: #0c5da6;;
+}
+.services .icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+  color:  #63c1c5;
+}
+
+/* Galeria */
+.gallery {
+  background: #f5f7fa;;
+}
+.gallery img {
+  transition: transform 0.5s ease;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Equipa */
+.team {
+  background: #0c5da6;
+}
+.member {
+  background: rgba(255, 255, 255, 0.1);
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #63c1c5, #0c5da6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+
+.contact {
+  background: #f5f7fa;;
+}
+.btn-primary {
+  background: #0c5da6;
+  border: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: #63c1c5;
+  color: #003;
+}
